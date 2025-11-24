@@ -612,28 +612,6 @@ My work on the statistics dashboards, ELK stack, and monitoring infrastructure p
 
 ---
 
-## 🔍 Monitoring & Observability
-
-### Logging (ELK Stack)
-- **Elasticsearch**: Centralized log storage and indexing
-- **Logstash**: Log aggregation and processing from all services
-- **Kibana**: Log visualization and analysis dashboards
-
-Access Kibana at: `http://localhost:5601` (if exposed)
-
-### Metrics (Prometheus & Grafana)
-- **Prometheus**: Metrics collection and time-series database
-- **Grafana**: Custom dashboards for system and application metrics
-- **Exporters**: Node Exporter, cAdvisor, Nginx Exporter
-- **Thanos**: Long-term metrics storage and high availability
-
-Access Grafana at: `https://localhost:443/grafana`
-
-### Alerting
-- **Alertmanager**: Alert routing and notification
-- **Discord Integration**: Real-time alerts sent to Discord channels
-- **Alert Rules**: CPU, memory, connection thresholds
-
 ## 📝 License
 
 This project is part of the 42 Network curriculum.
