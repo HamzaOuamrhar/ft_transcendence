@@ -537,22 +537,27 @@ I designed and implemented a comprehensive monitoring infrastructure using Prome
 
 **Monitoring Architecture:**
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    Metrics Collection                        │
-├─────────────────────────────────────────────────────────────┤
-│  Node Exporter  →  System Metrics   →                      │
-│  cAdvisor       →  Container Stats  →   Prometheus          │
-│  Nginx Exporter →  Proxy Metrics    →                      │
-└─────────────────────────────────────────────────────────────┘
-                              ↓
-                   ┌──────────┴──────────┐
-                   ↓                     ↓
-            Alertmanager           Thanos Sidecar
-                   ↓                     ↓
-           Discord Alerts          S3 Storage
-                                        ↓
-                                   Grafana
-                                (Visualization)
+┌─────────────────────────────────────────────────────────────────┐
+│                      Metrics Collection                         │
+├─────────────────────────────────────────────────────────────────┤
+│  Node Exporter    →  System Metrics      ↘                      │
+│  cAdvisor         →  Container Stats     → Prometheus           │
+│  Nginx Exporter   →  Proxy Metrics       ↗                      │
+└─────────────────────────────────────────────────────────────────┘
+                                              │
+                     ┌────────────────────────┼────────────────────┐
+                     │                        │                    │
+                     ▼                        ▼                    ▼
+              ┌─────────────┐         ┌─────────────┐      ┌─────────────┐
+              │ Alertmanager│         │   Grafana   │      │   Thanos    │
+              │             │         │(Visualize)  │      │  Sidecar    │
+              └──────┬──────┘         └─────────────┘      └──────┬──────┘
+                     │                                            │
+                     ▼                                            ▼
+              ┌─────────────┐                              ┌─────────────┐
+              │   Discord   │                              │ S3 Storage  │
+              │   Alerts    │                              │  (Archive)  │
+              └─────────────┘                              └─────────────┘
 ```
 
 **Key Features Delivered:**
@@ -625,8 +630,6 @@ This project is part of the 42 Network curriculum.
 - **Open Source Community** for the amazing tools and libraries used
 
 ---
-
-**Project Status**: ✅ Active Development
 
 **Team**: HamzaOuamrhar and collaborators
 
