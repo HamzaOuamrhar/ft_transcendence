@@ -90,7 +90,7 @@ export default function Dashboard() {
         ) : (
             <div className="flex flex-col mt-25 min-w-6xl">
                 <div className="flex mb-5 justify-around">
-                    <div className="relative h-[30vh] xl:h-[40vh] overflow-hidden rounded-[10px] w-[30%] group 2xl:h-[40vh]">
+                    <div className="relative h-[45vh] overflow-hidden rounded-[10px] w-[30%] group 2xl:h-[40vh]">
                         <Image
                             src="/images/board.jpg"
                             alt="board"
@@ -108,7 +108,7 @@ export default function Dashboard() {
                         </div>
 
                     </div>
-                    <div className="h-[30vh] xl:h-[40vh] rounded-[10px] w-[65%] bg-gray-800 overflow-y-auto custom-scrollbar-gray 2xl:h-[40vh]">
+                    <div className="h-[45vh] rounded-[10px] w-[65%] bg-gray-800 overflow-y-auto custom-scrollbar-gray 2xl:h-[40vh]">
                         <h2 className="p-4 font-bold 2xl:text-[1.2rem]">OVERVIEW</h2>
                         <div className="flex items-center pl-10 2xl:mb-10">
                             <PieChart user={user!} />
@@ -126,10 +126,10 @@ export default function Dashboard() {
                     </div>
                 </div>
                 <div className="flex mb-10 justify-around">
-                    <div className="h-[30vh] xl:h-[40vh] rounded-[10px] w-[30%] 2xl:h-[40vh]">
+                    <div className="h-[45vh] rounded-[10px] w-[30%] 2xl:h-[40vh]">
                         <BarChart weeklyStats={weeklyStats} />
                     </div>
-                    <div className="h-[30vh] xl:h-[40vh] rounded-[10px] w-[65%] bg-gray-800 overflow-y-hidden flex flex-col 2xl:h-[40vh]">
+                    <div className="h-[45vh] rounded-[10px] w-[65%] bg-gray-800 overflow-y-hidden flex flex-col 2xl:h-[40vh]">
                         <div className="grid grid-cols-5 py-3 pr-5 justify-items-center border-b-1 border-gray-700">
                             <span className="2xl:text-[1.2rem]">Date & Time</span>
                             <span className="2xl:text-[1.2rem]">Type</span>
